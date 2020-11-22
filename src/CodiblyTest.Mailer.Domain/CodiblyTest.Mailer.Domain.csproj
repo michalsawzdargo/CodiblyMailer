@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodiblyTest.Mailer.Core\CodiblyTest.Mailer.Core.csproj" />
+    <ProjectReference Include="..\CodiblyTest.Mailer.Domain.Contracts\CodiblyTest.Mailer.Domain.Contracts.csproj" />
+    <ProjectReference Include="..\CodiblyTest.Mailer.Storage\CodiblyTest.Mailer.Storage.csproj" />
+  </ItemGroup>
+
+</Project>

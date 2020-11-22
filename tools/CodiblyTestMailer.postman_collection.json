@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "723ea3e4-95aa-44c1-bad4-91dae5aa59f0",
+		"name": "CodiblyTestMailer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Mail List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/mails?pageNumber=1&pageSize=5",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"mails"
+					],
+					"query": [
+						{
+							"key": "pageNumber",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Mail Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/mails/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"mails",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Create Mail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sender\": \"testsender@test.com\",\r\n    \"recipients\": [\"rec1@test.com\", \"rex2@test.com\"],\r\n    \"subject\": \"Test 1 Subject\",\r\n    \"body\": \"Test 1 Body\",\r\n    \"priority\": \"Low\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/mails",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"mails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Add Attachment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/micha/Downloads/obrazki/rubber-duck-icon.png"
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/mails/1/attachments",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"mails",
+						"1",
+						"attachments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Change Mail Priority",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"priority\": \"High\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/mails/1/priority",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"mails",
+						"1",
+						"priority"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Send Mails",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/mails/send",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"mails",
+						"send"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
